@@ -1,6 +1,6 @@
 [[source]]
 
-url = "https://pypi.python.org/simple"
+url = "https://github.com/sysleaf/top-equity-stocks"
 verify_ssl = true
 
 
@@ -8,7 +8,7 @@ verify_ssl = true
 
 redis = "*"
 cherrypy = "*"
-zipfile-heroku = "*"
+zipfile = "*"
 requests = "*"
 csv = "*"
 
