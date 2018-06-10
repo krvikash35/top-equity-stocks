@@ -48,6 +48,6 @@ if __name__ == '__main__':
             'tools.staticdir.dir': static_dir
         }
     }
-    cherrypy.config.update({'server.socket_port': os.environ['PORT']})
+    cherrypy.config.update({'server.socket_port': int(os.environ['PORT'])})
     cherrypy.quickstart(root, '/', cp_config)
     scheduleUpdate()
