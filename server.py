@@ -33,7 +33,6 @@ class API:
     def searchstocks(self, name=""):
         stocks_details = []
         for sccode in redis_conn.hscan_iter('bhavcopy:equity:scname:sccode', match='*'+name+'*', count=10):
-            print sccode
             stock_details = redis_conn.hgetall('bhavcopy:equity:sccode:'+sccode[1])
             stocks_details.append(stock_details)
         return stocks_details
