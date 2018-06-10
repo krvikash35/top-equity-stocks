@@ -8,9 +8,8 @@ verify_ssl = true
 
 redis = "*"
 cherrypy = "*"
-zipfile = "*"
 requests = "*"
-csv = "*"
+schedule = "*"
 
 
 [requires]
