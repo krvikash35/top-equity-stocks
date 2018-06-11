@@ -3,8 +3,10 @@ from datetime import datetime, timedelta
 from redis import Redis 
 import requests, os, csv, schedule, time, threading
 
+print(datetime.now())
 os.environ['TZ']='Asia/Kolkata'
 time.tzset()
+print(datetime.now())
 
 root_dir = os.path.dirname(os.path.realpath(__file__))
 download_dir = os.path.join(root_dir, 'download')
