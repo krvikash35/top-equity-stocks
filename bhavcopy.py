@@ -3,6 +3,9 @@ from datetime import datetime, timedelta
 from redis import Redis 
 import requests, os, csv, schedule, time, threading
 
+os.environ['TZ']='Asia/Kolkata'
+time.tzset()
+
 root_dir = os.path.dirname(os.path.realpath(__file__))
 download_dir = os.path.join(root_dir, 'download')
 extract_dir = os.path.join(root_dir, 'extract')
@@ -26,8 +29,7 @@ def download():
     
     print('Download folder: %s\nExtract folder: %s' %(download_dir, extract_dir))
 
-    os.environ['TZ']='Asia/Kolkata'
-    time.tzset()
+
     latest_bhavcopy_file = 'EQ' + datetime.now().strftime('%d%m%y') + '_CSV.ZIP'
     # latest_bhavcopy_file = 'EQ080618_CSV.ZIP'
     download_url = 'https://www.bseindia.com/download/BhavCopy/Equity/' + latest_bhavcopy_file
